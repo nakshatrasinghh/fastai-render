@@ -28,6 +28,20 @@ def read_model(model_file):
     learn = load_learner(model_file)
     return learn
 
+def yer(filename):
+    if filename.name[0:2] == "ca":  # cardboard
+        return "cardboard"
+    if filename.name[0:2] == "gl":  # glass
+        return "glass"
+    if filename.name[0:2] == "me":  # metal
+        return "metal"
+    if filename.name[0:2] == "pa":  # paper
+        return "paper"
+    if filename.name[0:2] == "pl":  # plastic
+        return "plastic"
+    if filename.name[0:2] == "tr":  # trash
+        return "trash"
+
 
 async def download_file(url, dest):
     if dest.exists(): return
